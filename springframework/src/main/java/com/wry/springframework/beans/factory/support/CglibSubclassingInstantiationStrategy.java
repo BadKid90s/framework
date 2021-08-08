@@ -7,6 +7,11 @@ import net.sf.cglib.proxy.NoOp;
 
 import java.lang.reflect.Constructor;
 
+/**
+ * 在 BeanFactory 中使用的默认对象实例化策略
+ *
+ * @author wry
+ */
 public class CglibSubclassingInstantiationStrategy implements InstantiationStrategy {
 
     @Override

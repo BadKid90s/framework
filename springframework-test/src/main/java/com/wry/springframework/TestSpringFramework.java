@@ -7,6 +7,9 @@ import com.wry.springframework.beans.factory.support.PropertyValue;
 import com.wry.springframework.beans.factory.support.PropertyValues;
 import com.wry.springframework.beans.factory.support.SimpleInstantiationStrategy;
 import org.junit.Test;
+import org.springframework.beans.factory.config.SingletonBeanRegistry;
+import org.springframework.beans.factory.support.CglibSubclassingInstantiationStrategy;
+import org.springframework.beans.factory.support.InstantiationStrategy;
 
 public class TestSpringFramework {
     @Test
@@ -41,6 +44,8 @@ public class TestSpringFramework {
     }
 
 
+
+
     @Test
     public void t3() {
         // 1.初始化 BeanFactory
@@ -62,7 +67,5 @@ public class TestSpringFramework {
         // 5. UserService 获取bean
         UserService userService = (UserService) beanFactory.getBean("userService");
         userService.queryUserInfoByDao();
-
-
     }
 }

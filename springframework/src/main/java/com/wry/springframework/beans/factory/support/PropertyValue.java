@@ -1,5 +1,10 @@
 package com.wry.springframework.beans.factory.support;
 
+/**
+ * 用于保存单个 bean 属性的信息和值的对象
+ *
+ * @author wry
+ */
 public class PropertyValue {
 
     private final String name;

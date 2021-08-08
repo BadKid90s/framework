@@ -3,6 +3,11 @@ package com.wry.springframework.beans.factory.support;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 包含一个或多个PropertyValue对象的持有者，通常包括针对特定目标 bean 的一次更新。
+ *
+ * @author wry
+ */
 public class PropertyValues {
 
     private final List<PropertyValue> propertyValueList = new ArrayList<>();

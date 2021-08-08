@@ -7,6 +7,10 @@ import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Objects;
 
+/**
+ * 在 BeanFactory 中使用的简单对象实例化策略。
+ * @author wry
+ */
 public class SimpleInstantiationStrategy implements InstantiationStrategy {
 
     @Override
