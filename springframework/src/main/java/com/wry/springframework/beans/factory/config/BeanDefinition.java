@@ -3,14 +3,14 @@ package com.wry.springframework.beans.factory.config;
 import com.wry.springframework.beans.factory.support.PropertyValues;
 
 public class BeanDefinition {
-    private Class beanClass;
+    private Class<?> beanClass;
     private PropertyValues propertyValues;
 
-    public BeanDefinition(Class beanClass) {
+    public BeanDefinition(Class<?> beanClass) {
         this.beanClass = beanClass;
     }
 
-    public BeanDefinition(Class beanClass, PropertyValues propertyValues) {
+    public BeanDefinition(Class<?> beanClass, PropertyValues propertyValues) {
         this.beanClass = beanClass;
         this.propertyValues = propertyValues;
     }
@@ -23,11 +23,11 @@ public class BeanDefinition {
         this.propertyValues = propertyValues;
     }
 
-    public Class getBeanClass() {
+    public Class<?> getBeanClass() {
         return beanClass;
     }
 
-    public void setBeanClass(Class beanClass) {
+    public void setBeanClass(Class<?> beanClass) {
         this.beanClass = beanClass;
     }
 }
