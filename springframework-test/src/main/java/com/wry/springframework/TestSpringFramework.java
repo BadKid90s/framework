@@ -6,6 +6,7 @@ import com.wry.springframework.beans.factory.support.DefaultListableBeanFactory;
 import com.wry.springframework.beans.factory.support.PropertyValue;
 import com.wry.springframework.beans.factory.support.PropertyValues;
 import com.wry.springframework.beans.factory.support.SimpleInstantiationStrategy;
+import com.wry.springframework.beans.factory.xml.XmlBeanDefinitionReader;
 import org.junit.Test;
 import org.springframework.beans.factory.config.SingletonBeanRegistry;
 import org.springframework.beans.factory.support.BeanDefinitionReader;
@@ -65,12 +66,21 @@ public class TestSpringFramework {
 
         // 5. UserService 获取bean
         UserService userService = (UserService) beanFactory.getBean("userService");
-        userService.queryUserInfoByDao();
+        userService.queryUserInfo();
     }
 
     @Test
-    public void t4(){
-//        Resource
-//        BeanDefinitionReader
+    public void test_xml() {
+        // 1.初始化 BeanFactory
+        DefaultListableBeanFactory beanFactory = new DefaultListableBeanFactory();
+
+        // 2. 读取配置文件&注册Bean
+        XmlBeanDefinitionReader reader = new XmlBeanDefinitionReader(beanFactory);
+        reader.loadBeanDefinitions("classpath:spring.xml");
+
+        // 3. 获取Bean对象调用方法
+        UserService userService = beanFactory.getBean("userService", UserService.class);
+        userService.queryUserInfo();
+        System.out.println("测试完成。");
     }
 }
